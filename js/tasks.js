@@ -1,108 +1,83 @@
-//TODO: Завдання 1
-//*  Оголоси функцію calculateBMI(weight, height), яка приймає вагу (в кг) і зріст (в м) і повертає обчислений індекс маси тіла. Результат округли до одного знака після коми.
+// //! Знайомство з масивами
 
-// let weight = prompt('What is your body weight? (in kg)');
-// let height = prompt('What is your height? (in m)');
+// //TODO: Створи масив із назвами кількох фруктів. Виведи в консоль перший і останній елемент масиву, використовуючи індекси.
+// const fruits = ['apple' , 'banana', 'grapefruit', 'pineapple', 'mango', 'pear'];
+
+// console.log(fruits[0]);
+// console.log(fruits[fruits.length - 1]);
+
+// //? Заміни значення другого елемента в масиві на інше. Виведи масив у консоль.
+// fruits[1] = 'limon';
+// console.log(fruits);
 
 
-// function calculateBMI(weight, height){
-//     bmi = Number.parseFloat(weight) / Number.parseFloat((height**2));
-//     bmiRounded = Number(bmi.toFixed(1));
-//     console.log(`Your body mass index is ${bmiRounded}`);
+// //? Створи змінну lastIndex та присвой їй індекс передостаннього елемента масиву. Використовуй властивість length масиву.
+// const penultimateIndex = fruits.length - 1;
+// console.log(fruits[penultimateIndex]);
 
-//     if(bmiRounded <= 18.5) {
-//         console.log('This index shows insuficcent weight. You should gain weight!');
-//         console.log();
-//     } else if (bmiRounded >= 18.5 && bmiRounded <= 25){
-//         console.log('This is normal index. Everything is great!');
-//     } else if (bmiRounded >= 25 && bmiRounded <= 40){
-//         console.log('This index shows overweight. You should lose weight!');
-//     }
+//! Методи масивів
+
+//TODO: Об'єднай масив із трьох рядків у рядок, розділений комами, використовуючи метод join.
+// const arr = ['Hello', 'dear', 'world!']
+// const str = arr.join(', ')
+
+// console.log(str);
+
+//? Напиши функцію splitWords(sentence), яка приймає рядок, розбиває його на слова та повертає масив цих слів, використовуючи split.
+// function splitWords(sentence){
+//     arr = sentence.split(', ');
+//     return arr;
 // }
 
-// calculateBMI(weight, height);
+// console.log(splitWords('Ono, Maruyama, Abe, Takato, Nagase, Saito, Nomura, Sasaki'));
 
-//TODO: Завдання 2
-//*  Напиши функцію isEven(number), яка приймає число і повертає true, якщо число парне, і false, якщо непарне.
+//? Створи масив чисел від 1 до 10 за допомогою циклу. Виріж із нього підмасив від 3 до 7 включно, використовуючи slice.
+// const maxNum = 10;
+// let numArr = [];
 
-// let userNum = prompt('Write random number');
 
-// function checkEvenNum(userNum){
-//     if(Number(userNum) % 2 === 0){
-//         console.log('Number is even');
-//     } else {
-//         console.log('Number is odd');
-//     }
+// for(let i = 1; i <= maxNum; ++i){
+//     numArr.push(i);
 // }
 
-// checkEvenNum(userNum);
-
-//TODO: Завдання 3
-//*  Оголоси цикл fizzBuzz(n), яка виводить числа від 1 до n. Для чисел, кратних 3, виводь "Fizz", для чисел, кратних 5 — "Buzz", а для чисел, кратних 3 і 5, — "FizzBuzz".
-
-// let maxNum = 100;
-
-// for(let i = 1; i <= maxNum; ++i) {
-    
-//     if (i % 5 === 0 && i % 3 === 0){
-//         console.log('FizzBuzz');
-//     }else if (i % 3 === 0) {
-//         console.log('Fizz');
-//     } else if (i % 5 === 0) {
-//         console.log('Buzz');
-//     } else{
-//         console.log(i);
-//     }
+// function sliceArr(startIndex, finishIndex){
+//     numArr = numArr.slice(startIndex, finishIndex);
+//     return numArr;
 // }
 
-//TODO: Завдання 4
-//*  Напиши програму, яка запитує у користувача пароль, доки він не введе правильний пароль "secure123". Після кожної невірної спроби виводь повідомлення "Wrong password, try again.". Якщо пароль введено правильно, виведи повідомлення "Access granted!".
+// console.log(sliceArr(2 , 7));
 
-// const correctPassword = "secure123";
-// let userPassword;
+//? З’єднай два масиви [1, 2, 3] та [4, 5, 6] у новий масив, використовуючи concat.
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
 
-// do{
-//     userPassword = prompt('Write password');
-    
-//     if(userPassword !== correctPassword){
-//         alert('Wrong password, try again.');
-//     } else if(userPassword === correctPassword){
-//         alert('Access granted!');
-//     }
-// }while(userPassword !== correctPassword)
+// let totalArr = arr1.concat(arr2);
+// console.log(totalArr);
 
-//TODO: Завдання 5
-//*  Оголоси функцію orderCoffee, яка приймає три параметри:
-//? coffeeType — тип кави.
-//? size — розмір (малий, середній або великий).
-//? hasDiscount — логічне значення, яке вказує, чи має клієнт знижку.
+//? Знайди індекс елемента "apple" у масиві ["banana", "apple", "grape"], використовуючи indexOf. Заміни його
+// let fruit = ["banana", "apple", "grape"];
+// let appleIndex = fruit.indexOf('apple');
 
-// *Ціни:
-//? Малий — 5 доларів
-//? Середній — 7 доларів
-//? Великий — 9 доларів
-//? Якщо hasDiscount дорівнює true, нараховується знижка 10%.
+// fruit[appleIndex] = 'melon';
 
-//* Функція повинна повертати повідомлення:
-//? "You ordered a [size] [coffeeType] coffee. Total price is [totalPrice]$.",
-//? де totalPrice — загальна вартість із врахуванням знижки, якщо вона є.
+// console.log(fruit);
 
-let coffeeType;
-let coffeSize = prompt("What size would you like? small - 5$, medium - 7$, large - 9$");
-let coffePrice;
+//? Додай елемент "orange" у кінець масиву, використовуючи push. Видали перший елемент
 
-if(coffeSize.toLowerCase() = "small"){
-    coffePrice = 5;
-}else if(coffeSize.toLowerCase() = "medium"){
-    coffePrice = 7;
-} else if(coffeSize.toLowerCase() = "large"){
-    coffePrice = 9;
-}
+// fruit.push('orange');
+// console.log(fruit);
 
-const correctPromo = "COFFEE20";
+// fruit.shift();
+// console.log(fruit);
 
-let totalPrice ;
+//! Ітерація по масиву
+//TODO: Створи масив чисел від 1 до 10. Виведи всі числа у консоль, використовуючи цикл for.
+//? Перебери масив рядків (назви міст) за допомогою циклу for...of, вивівши кожне місто в консоль.
+//? Напиши функцію findEvenNumbers(arr), яка приймає масив чисел і повертає новий масив, що містить лише парні числа.
+// .....
 
-let userPromo = prompt('Write promo to recieve a discount');
-let hasDiscount = userPromo === correctPromo ? true : false;
-
+//!  Функції
+//TODO: Напиши функцію calculateAverage, яка приймає довільну кількість числових аргументів та повертає їх середнє значення. Використай псевдомасив arguments.
+//? Створи анонімну функцію для обчислення квадрата числа та присвой її до змінної square. Використай цю функцію для обчислення квадрата числа 5.
+//? Напиши функцію showCallStack, яка викликає іншу функцію secondFunction, яка в свою чергу викликає ще одну функцію thirdFunction. Кожна функція має виводити своє ім'я, щоб побачити порядок викликів у консолі.
+// .....
