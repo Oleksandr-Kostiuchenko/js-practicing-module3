@@ -48,7 +48,7 @@
 
 // console.log(sliceArr(2 , 7));
 
-//? З’єднай два масиви [1, 2, 3] та [4, 5, 6] у новий масив, використовуючи concat.
+//? Зєднай два масиви [1, 2, 3] та [4, 5, 6] у новий масив, використовуючи concat.
 // const arr1 = [1, 2, 3];
 // const arr2 = [4, 5, 6];
 
@@ -184,10 +184,141 @@
 //!  Функції
 
 //TODO: Напиши функцію calculateAverage, яка приймає довільну кількість числових аргументів та повертає їх середнє значення. Використай псевдомасив arguments.
+// let arr = [];
+// let sum = 0;
+
+// function calculateAverage(){
+//     arr = Array.from(arguments);
+
+//     for(num of arr){
+//         sum += num;
+//     }
+
+//     let average = Math.round(sum / arr.length);
+//     return average;
+// }
+
+// console.log(calculateAverage(8, 7, 8));
 
 //? Створи анонімну функцію для обчислення квадрата числа та присвой її до змінної square. Використай цю функцію для обчислення квадрата числа 5.
+
+// let square =  function(num) {
+//     square = num**2;
+    
+//     return (`${num}² = ${square}`);
+// }
+
+// console.log(square(5));
+
 //? Напиши функцію showCallStack, яка викликає іншу функцію secondFunction, яка в свою чергу викликає ще одну функцію thirdFunction. Кожна функція має виводити своє ім'я, щоб побачити порядок викликів у консолі.
-//? Створи список доступних товарів та функцію додавання, видалення або оновлювання товарів
+// function firstFunction(){
+//     console.log('firstFunction execution');
+    
+//     console.log('Log before secondFunction execution')
+//     secondFunction();
+//     console.log('Log after secondFunction execution')
+// }
+
+// function secondFunction(){
+//     console.log('secondFunction execution');
+    
+//     console.log('Log before thirdFunction execution')
+//     thirdFunction();
+//     console.log('Log after thirdFunction execution')
+// }
+
+// function thirdFunction(){
+//     console.log('thirdFunction execution');
+// }
+
+// firstFunction();
+
+//TODO: Створи список доступних товарів та функцію додавання, видалення або оновлювання товарів
+// // Button vars
+// const addButton = 1;
+// const deleteButton = 2;
+// const updateButton = 3; 
+// const nothingButton = 0;
+
+// // Products vars
+// let mobilesStr = 'Samsung_A54 Iphone_14 Xiaomi_redmi_3 Huawei_7 Pixel_10';
+// console.log(mobilesStr);
+// let productArr = mobilesStr.split(' ');
+
+// // Inicial alert
+// alert('------------------------- Welcome to Rozetka! -------------------------');
+// let userButton;
+
+// // Script logics
+// while (Number.parseFloat(userButton) !== nothingButton){
+//     userButton = prompt('Here are our mobile phones. To add a product type "1". To delete a product type 2. To update product type 3. Else type 0.');
+    
+//     if (Number.parseFloat(userButton) === addButton){
+//         console.log(addProduct());
+//     } else if (Number.parseFloat(userButton) === deleteButton){
+//         console.log(deleteProduct());
+//     }else if (Number.parseFloat(userButton) === updateButton){
+//         console.log(updateProduct());
+//     }else{
+//         break;
+//     }
+// }
+
+// // Functions
+// function addProduct(){
+//     let addingProduct = prompt('What do you want to add?');
+
+//     productArr.push(addingProduct);
+//     mobilesStr = productArr.join(' ');
+
+//     return(`Added successfuly! Our list: ${mobilesStr}`);
+// }
+
+// function deleteProduct(){
+//     let deletingProduct = prompt('What do you delete?');
+//     let deletingProductNorm = deletingProduct.toLowerCase();
+    
+//     mobilesStr = productArr.join(' ');
+    
+//     let productArrNorm = [];
+//     for(actualProduct of productArr){
+//         productArrNorm.push(actualProduct.toLowerCase());
+//     }
+
+//     if(productArrNorm.includes(deletingProductNorm)){
+//         let deletingIndex = productArrNorm.indexOf(deletingProductNorm);
+
+
+//         productArr.splice(deletingIndex, 1);
+//         mobilesStr = productArr.join(' ');
+//         return(`Deleted successfuly! Our list: ${mobilesStr}`);
+//     } else{
+//         return(`Sorry! But there isn't ${deletingProduct}`);
+//     }
+// }
+
+// function updateProduct(){
+//     let updatingProduct = prompt('Which product do you want to update?');
+//     let newProduct = prompt('Write new product:');
+//     let updatingProductNorm = updatingProduct.toLowerCase();
+
+//     mobilesStr = productArr.join(' ');
+
+//     let productArrNorm = [];
+//     for(actualProduct of productArr){
+//         productArrNorm.push(actualProduct.toLowerCase());
+//     }
+
+//     if(productArrNorm.includes(updatingProductNorm)){
+//         let updatingProductIndex = productArrNorm.indexOf(updatingProductNorm);
+
+//         productArr.splice(updatingProductIndex, 1, newProduct);
+//         mobilesStr = productArr.join(' ');
+//         return(`Updated successfuly! Our list: ${mobilesStr}`);
+//     }else{
+//         return(`Sorry! But there isn't ${updatingProductNorm}`);
+//     }
+// }
 
 //? Напиши функцію add для складання довільної кількості аргументів (чисел)
 // let sum = 0;
